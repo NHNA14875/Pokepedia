@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
-    <link rel="icon" href="img/logo.png" />
+    <link rel="icon" href="img/l2.png" />
     <style>
       body.bg-danger-subtle {
         background-color: #f8d7da !important;
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="card-body">
           <div class="text-center mb-3">
             <i class="bi bi-person-circle h1 display-4"></i>
-            <p>My Daily Journal</p>
+            <p>Welcome to Pokepedia</p>
             <hr />
           </div>
           <form action="" method="post">
