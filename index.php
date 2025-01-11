@@ -289,36 +289,45 @@ include "koneksi.php";
         <!--gallery begin-->
         <section id="gallery" class="text-center p-5 bg-danger-subtle">
             <div class="container">
-                <h1 class="fw-bold display-4 pb-3" id="gallery">gallery</h1>
+                <h1 class="fw-bold display-4 pb-3" id="gallery">Gallery</h1>
                 <div id="carouselExample" class="carousel slide">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/g1.jpg" class="d-block w-100" alt="gallery1">
+                    <div class="carousel-inner">
+                        <?php
+                        // Ambil data gambar dari database
+                        $sql = "SELECT * FROM gallery ORDER BY tanggal DESC"; 
+                        $hasil = $conn->query($sql); 
+
+                        // Cek apakah ada gambar
+                        $isActive = true; // Untuk menandai item pertama sebagai 'active'
+                        while($row = $hasil->fetch_assoc()){
+                            // Mendapatkan nama gambar dari kolom 'gambar'
+                            $imageSrc = "img/" . $row['gambar']; // Asumsi gambar disimpan di folder 'img/'
+
+                            // Menampilkan gambar di carousel
+                            if ($isActive) {
+                                // Set item pertama sebagai active
+                                echo '<div class="carousel-item active">';
+                                $isActive = false;
+                            } else {
+                                echo '<div class="carousel-item">';
+                            }
+                            echo '<img src="' . $imageSrc . '" class="d-block w-100" alt="gallery image">';
+                            echo '</div>';
+                        }
+                        ?>
                     </div>
-                    <div class="carousel-item">
-                      <img src="img/g2.jpg" class="d-block w-100" alt="gallery2">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/g3.jpg" class="d-block w-100" alt="gallery3">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/g4.jpg" class="d-block w-100" alt="gallery4">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/g5.jpg" class="d-block w-100" alt="gallery5">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </section>
+
         <!--gallery end-->
         <!--schedule start-->
         <section id="schedule" class="text-center p-5">
@@ -431,7 +440,7 @@ include "koneksi.php";
         <section id="about-me" class="text-center p-5 bg-danger-subtle d-flex justify-content-center align-items-center">
           <div class="container">
             <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center">
-              <img src="https://media.licdn.com/dms/image/v2/D4E03AQH3cLbYEivRkg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695111149688?e=1736380800&v=beta&t=lQhT45rt7MvJSVMer4Z0R4ev4TEMHjZo-DfGteJmYuU" class="img-fluid rounded-circle profile-image mb-4 mb-sm-0" width="250" alt="Profile Image">
+              <img src="https://media.licdn.com/dms/image/v2/D4E03AQH3cLbYEivRkg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695111149688?e=1741824000&v=beta&t=4KiQRk1v5NeryIXiYn2_KoPpEkJrV-9aXvzsV40pfjM" class="img-fluid rounded-circle profile-image mb-4 mb-sm-0" width="250" alt="Profile Image">
               <div class="text-center text-sm-start ms-sm-4">
                 <h6 class="text-muted">A11.2023.14875</h6>
                 <h1 class="fw-bold">Naufal Hanif Noorvietriya Achmadi</h1>
@@ -446,7 +455,7 @@ include "koneksi.php";
         <!--about-me end-->
         <!--footer begin-->
         <footer class="text-center p-5">
-            <a href="https://www.instagram.com/wissmatress"><i class="bi bi-instagram h2 p-2 icon-dark-mode"></i></a>
+            <a href="https://www.instagram.com/nhanifna"><i class="bi bi-instagram h2 p-2 icon-dark-mode"></i></a>
             <a href="https://x.com/hanif_nauf23939"><i class="bi bi-twitter-x h2 p-2 icon-dark-mode"></i></a>
             <a href="https://wa.me/+6285210742500"><i class="bi bi-whatsapp h2 p-2 icon-dark-mode"></i></a>
             <br><br>

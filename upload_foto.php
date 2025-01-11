@@ -16,9 +16,9 @@ function upload_foto($File){
 	//Allowed files:
 	$Allowed = array('jpg', 'png', 'gif', 'jpeg');  
 
-	// Check file size
-	if ($FileSize > 500000) {
-		$message .= "Sorry, your file is too large, max 500KB. ";
+	// Check file size (ubah batas ukuran file menjadi 5MB)
+	if ($FileSize > 10485760) {
+		$message .= "Sorry, your file is too large, max 10MB. ";
 		$uploadOk = 0;
 	}
 

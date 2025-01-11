@@ -66,13 +66,20 @@ if (!isset($_SESSION['username'])) {
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?page=article">Article</a>
-            </li> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.php?page=gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-bold" href="index.php">HomePage</a>
+            </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-danger fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?= $_SESSION['username']?>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="logout.php">Logout</a></li> 
+            <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <?= $_SESSION['username']?>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="admin.php?page=profile">Profile <?=$_SESSION['username']?> </a></li>
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>  
                 </ul>
             </li> 
         </ul>
@@ -102,13 +109,13 @@ if (!isset($_SESSION['username'])) {
     <!-- footer begin -->
     <footer class="text-center p-4 bg-danger-subtle">
     <div>
-        <a href="https://www.instagram.com/udinusofficial"
+        <a href="https://www.instagram.com/nhanifna"
         ><i class="bi bi-instagram h2 p-2 text-dark"></i
         ></a>
-        <a href="https://twitter.com/udinusofficial"
+        <a href="https://x.com/hanif_nauf23939"
         ><i class="bi bi-twitter-x h2 p-2 text-dark"></i
         ></a>
-        <a href="https://wa.me/+62812685577"
+        <a href="https://wa.me/+6285210742500"
         ><i class="bi bi-whatsapp h2 p-2 text-dark"></i
         ></a>
     </div>
