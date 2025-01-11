@@ -102,8 +102,8 @@
                 $stmt = $conn->prepare("UPDATE gallery 
                                         SET 
                                         tanggal = ?,
-                                        username = ?
-                                        gambar = ?,
+                                        username = ?,
+                                        gambar = ?
                                         WHERE id = ?");
 
                 $stmt->bind_param("sssi", $tanggal, $username, $gambar, $id);

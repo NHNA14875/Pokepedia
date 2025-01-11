@@ -56,6 +56,7 @@
                                 </div>
                                 <form method="post" action="" enctype="multipart/form-data">
                                     <div class="modal-body">
+                                    <input type="hidden" name="id" value="<?= $row["id"] ?>">
                                         <div class="mb-3">
                                             <label for="formGroupExampleInput2" class="form-label">Ganti
                                                 Gambar</label>
